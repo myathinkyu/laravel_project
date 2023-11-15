@@ -39,13 +39,16 @@
       </form> -->
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">
-          <span class="glyphicon glyphicon-flag">Category</span>
+          <span class="glyphicon glyphicon-flag"> Category</span>
         </a></li>
         <li><a href="#">
-          <i class="fa fa-podcast" aria-hidden="true">Brand</i>
+          <span class="glyphicon glyphicon-bookmark"> Brand</span>
+        </a></li>
+        <li><a href="#">
+          <i class="glyphicon glyphicon-shopping-cart"> Cart</span></i>
         </a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Membership <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"> <span class="caret"></span></a><span>
           <ul class="dropdown-menu">
             <li><a href="#">Login</a></li>
             <li><a href="#">Logout</a></li>
