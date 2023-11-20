@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/', function(){
-    return view('home');
-});
+Route::get('/', 'App\Http\Controllers\PageController@index');
+
+#product
+
+Route::get('products', 'App\Http\Controllers\PageController@index');
+Route::get('products/create', 'App\Http\Controllers\ProductController@create');
+Route::post('products/create', 'App\Http\Controllers\ProductController@store');

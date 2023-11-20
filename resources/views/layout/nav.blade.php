@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="{{url('/')}}">
         <span class="glyphicon glyphicon-home"> Shopkeeper</span>
       </a>
     </div>
@@ -48,7 +48,17 @@
           <i class="glyphicon glyphicon-shopping-cart"> Cart</span></i>
         </a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"> <span class="caret"></span></a><span>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products  <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{url('products/create')}}">Create</a></li>
+            <li><a href="#">View All Products</a></li>
+            <li><a href="#">Edit</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"> <span class="caret"></span><span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Login</a></li>
             <li><a href="#">Logout</a></li>
