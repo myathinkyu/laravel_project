@@ -26,3 +26,6 @@ Route::get('/', 'App\Http\Controllers\PageController@index');
 Route::get('products', 'App\Http\Controllers\PageController@index');
 Route::get('products/create', 'App\Http\Controllers\ProductController@create');
 Route::post('products/create', 'App\Http\Controllers\ProductController@store');
+
+Route::get('products/{id}/add-cart', 'App\Http\Controllers\PageController@add');
+Route::get('products/cart', 'App\Http\Controllers\PageController@show');

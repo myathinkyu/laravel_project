@@ -37,17 +37,35 @@ class ProductController extends Controller
      */
     public function store(ProductInsertFormRequest $request)
     {
-        // $file = $request->file('file');
         $files = $request->file('file');
-        if(!empty($files)){
-            foreach($files as $file){
-                echo $file->getClientOriginalName() . "<br>";
-            }
+        $fileAry = array();
+        foreach($files as $file){
+            $filename = uniqid() . '_' .$file->getClientOriginalName();
+            array_push($fileAry, $filename);
+            $file->move(public_path('/uploads/'), $filename);
         }
+
+        Product::create([
+            'title' => $request->get('title'),
+            'price' => $request->get('price'),
+            'description' => $request->get('description'),
+            'imgs' => serialize($fileAry)
+        ]);
+
+        //dd($fileAry);
+
+        return redirect('products/create')->with('status', 'Data Insert Successfully!');
+    
+
+        // for($i = 0; $i < count($fileAry); $i++){
+        //     echo $fileAry[$i] . '<br>';
+        // }
+
+        // $file = $request->file('file');
         // $filename = uniqid() . '_' .$file->getClientOriginalName();
 
         // $file->move(public_path().'/uploads/', $filename);
-        //Storage::put('uploads/'.$file->getClientOriginalName(), file_get_contents($file));
+        // Storage::put('uploads/'.$file->getClientOriginalName(), file_get_contents($file));
 
         // Product::create([
         //     'title' => $request->get('title'),

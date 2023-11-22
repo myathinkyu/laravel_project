@@ -44,11 +44,16 @@
         <li><a href="#">
           <span class="glyphicon glyphicon-bookmark"> Brand</span>
         </a></li>
-        <li><a href="#">
-          <i class="glyphicon glyphicon-shopping-cart"> Cart</span></i>
+        <li><a href="{{url('products/cart')}}">
+          <i class="glyphicon glyphicon-shopping-cart"> 
+            Cart 
+            @if(session('items'))
+              {{count(session('items'))}}
+            @endif
+          </span></i>
         </a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products  <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products &nbsp;<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{url('products/create')}}">Create</a></li>
             <li><a href="#">View All Products</a></li>
